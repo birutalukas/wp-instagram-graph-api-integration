@@ -1,0 +1,50 @@
+.insta {
+	background-color: #e9e0d7;
+	padding: 50px 0 !important;
+	&__container {
+		display: flex;
+		flex-wrap: wrap;
+		width: calc(100% + 2rem);
+		margin-left: -1rem;
+	}
+	&__item {
+		width: calc(25% - 2rem);
+		position: relative;
+		margin: 1rem;
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		height: 0;
+		padding-bottom: calc(25% - 2rem);
+		&:hover {
+			.insta__item__overlay {
+				opacity: 0.5;
+			}
+		}
+		&__overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			opacity: 0;
+			z-index: 10;
+			background-color: #000;
+			transition: 0.25s ease-in-out;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			img {
+				display: block;
+				width: 100px;
+				height: 100px;
+			}
+		}
+	}
+}
+@media all and (max-width: 992px) {
+	.insta__item {
+		width: calc(50% - 2rem);
+		padding-bottom: calc(50% - 2rem);
+	}
+}
